@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Creeper&display=swap');
+
+body {
+    background-color: #1a1a1a; color: #e0e0e0; font-family: 'Special Elite', serif;
+    margin: 0; padding: 20px; background-image: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+    transition: filter 0.5s;
+}
+
+.grain { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('https://grainy-gradients.vercel.app/noise.svg'); opacity: 0.1; pointer-events: none; z-index: 9999; }
+
+/* --- EFFET TV --- */
+.tv-off-effect { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #fff; z-index: 30000; display: none; }
+.tv-off-active { display: block; animation: tv-shutdown 0.4s forwards ease-in; }
+@keyframes tv-shutdown { 0% { transform: scaleY(1); } 40% { transform: scaleY(0.005) scaleX(1); } 70% { transform: scaleY(0.005) scaleX(0.01); } 100% { transform: scale(0); opacity: 0; } }
+
+/* --- MISTER F TIMER --- */
+.ghost-timer {
+    position: fixed; bottom: 20px; right: 30px; font-size: 1.5rem; color: #00ffff;
+    text-shadow: 0 0 10px #00ffff; z-index: 20000; display: none;
+}
+.ghost-haunted .ghost-timer { display: block; animation: blink 1s infinite alternate; }
+
+/* --- MISTER F & TOURSKY STYLE --- */
+.ghost-haunted body { filter: invert(1) hue-rotate(180deg); background: #000; }
+.ghost-title { color: #ff0000 !important; text-shadow: 0 0 15px #ff0000; }
+.ghost-paper { border-left: 10px solid #ff0000 !important; background: #111 !important; color: #ff0000 !important; box-shadow: 10px 10px 0px #ff0000 !important; }
+.ghost-debate { background: #000 !important; color: #00ffff !important; border: 2px dashed #00ffff !important; box-shadow: 10px 10px 0px #00ffff !important; }
+.toursky-quote { font-family: 'Creeper', cursive; font-size: 2.2rem; color: #00ffff; text-align: center; display: block; margin: 20px 0; }
+.galaxy-tag { text-align: center; font-style: italic; color: #00ffff; margin-top: -25px; margin-bottom: 20px; text-shadow: 0 0 10px #00ffff; }
+
+/* --- UI CLASSIQUE --- */
+nav { display: flex; justify-content: center; gap: 15px; margin-bottom: 50px; }
+.btn-squat { background: #eee; border: none; padding: 10px 20px; cursor: pointer; font-family: 'Special Elite'; box-shadow: 4px 4px 0px #b22222; }
+.panic { background: #000; color: #f00; border: 1px solid #f00; animation: pulse 1s infinite; }
+.tab-content { display: none; max-width: 800px; margin: 0 auto; }
+.tab-content.active { display: block; }
+.torn-effect { background: #fff; color: #111; padding: 30px; margin-bottom: 20px; clip-path: polygon(0% 2%, 100% 0%, 98% 95%, 2% 100%, 0% 50%); }
+.glitch { font-size: 3rem; text-align: center; text-shadow: 2px 2px red, -2px -2px blue; }
+.subtitle { text-align: center; background: yellow; color: #000; padding: 5px; width: fit-content; margin: -20px auto 20px; transform: rotate(-2deg); }
+
+/* --- POLICE GYROPHARES --- */
+.police-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: none; z-index: 10001; }
+.warning-popup { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #000; color: #f00; border: 5px solid #f00; padding: 20px; display: none; z-index: 10002; text-align: center; }
+.police-active .police-overlay { display: block; animation: gyrophares 0.2s infinite; }
+.police-active .warning-popup { display: block; }
+@keyframes gyrophares { 0% { background: rgba(0,0,255,0.4); } 50% { background: rgba(255,0,0,0.4); } }
+@keyframes blink { from { opacity: 1; } to { opacity: 0.4; } }
+@keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.5; } 100% { opacity: 1; } }

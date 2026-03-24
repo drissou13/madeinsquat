@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mad(e) in Squat - Kollectif Kokunka</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="main-body">
+    <div id="tv-off" class="tv-off-effect"></div>
+    <div id="ghost-timer" class="ghost-timer">03:00</div>
+    <div class="grain"></div>
+
+    <audio id="police-siren" preload="auto"><source src="https://www.myinstants.com/media/sounds/11900601.mp3" type="audio/mpeg"></audio>
+    <audio id="ghost-laugh" preload="auto"><source src="https://www.myinstants.com/media/sounds/female-ghost-laughing.mp3" type="audio/mpeg"></audio>
+    <audio id="door-creak" preload="auto"><source src="https://www.myinstants.com/media/sounds/metal-door-creak-high-quality.mp3" type="audio/mpeg"></audio>
+    <audio id="tv-click" preload="auto"><source src="https://www.soundjay.com/mechanical/sounds/switch-1.mp3" type="audio/mpeg"></audio>
+
+    <div id="police-overlay" class="police-overlay"></div>
+    <div id="warning-box" class="warning-popup">
+        <div class="alert-title">⚠️ DESCENTE EN COURS ⚠️</div>
+        <div id="survival-timer" class="timer">06:00</div>
+        <div class="alert-sub">ÉVACUATION IMMÉDIATE</div>
+    </div>
+
+    <nav id="top-nav">
+        <button onclick="showTab('resume')" class="btn-squat">RÉSUMÉ / DÉBAT</button>
+        <button onclick="showTab('film')" class="btn-squat">LE FLIM</button>
+        <button id="panic-btn" onclick="triggerPolice()" class="btn-squat panic">⚠️ PANIQUE</button>
+    </nav>
+
+    <main id="content">
+        <section id="resume" class="tab-content active">
+            <div class="header-box">
+                <h1 id="main-title" class="glitch">MAD(E) IN SQUAT</h1>
+                <p class="subtitle">Un flim du <span>Kollectif Kokunka</span></p>
+            </div>
+            <article class="paper-note torn-effect">
+                <p id="typewriter-text">
+                    Patchwork décousu d'écrits d'Aït Djafer, Molière, Sartre, Coluche (et bien d'autres), ainsi que d'anonymes d'un journal de bord ayant tourné dans des squats autonomes (le "Livre Rouge"), le flim de fiction "Mad(e) in Squat" vous propose de suivre les péripéties quotidiennes de son équipe de bras cassés.
+                </p>
+            </article>
+            <div class="debate-zone torn-effect">
+                <h2>LE DÉBAT :</h2>
+                <p>« On s'essaiera sur un paradoxe : l'enfermement dans lequel peuvent se trouver des personnes prônant pourtant l'ouverture et la liberté... »</p>
+            </div>
+        </section>
+
+        <section id="mister-f-section" class="tab-content">
+            <div class="header-box">
+                <h1 class="glitch ghost-title">MISTER F : UNE VIE DE SPECTRE-ACLE</h1>
+                <p class="subtitle">Un film de <span>Gaby Tènflamm</span></p>
+             </div>
+            <article class="paper-note torn-effect ghost-paper">
+                <h3>L'HISTOIRE :</h3>
+                <p>Mister F, spectre marseillais et colocataire d'outre-tombe de l'équipe de <strong>Mad(e) in Squat</strong>, erre dans les couloirs du temps. Entre deux tentatives désespérées de pirater le Wi-Fi du 4ème étage pour finir son streaming, il récite des vers oubliés pour ne pas perdre la tête.</p>
+                <p>Il est le paradoxe ultime du squat : libre de hanter tout le bâtiment, mais prisonnier d'un signal Wi-Fi qui ne passe pas les murs porteurs.</p>
+            </article>
+            <div class="debate-zone torn-effect ghost-debate">
+                <h2>L'HOMMAGE :</h2>
+                <blockquote class="toursky-quote">"Je suis le passager clandestin du vent..."</blockquote>
+                <p>Ce film est dédié à la mémoire d'<strong>Axel Toursky</strong>. Parce qu'au squat comme au théâtre, la poésie est la seule arme qui ne s'enraye jamais face aux murs de béton.</p>
+                <p style="font-size: 0.8rem; text-align: right;">— Gaby Tènflamm, en direct du Poste de Secours Poétique.</p>
+            </div>
+        </section>
+
+        <section id="film" class="tab-content">
+            <h2 class="glitch">PROJECTION</h2>
+            <div class="video-frame torn-effect">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/m2WQkX5OThI" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
